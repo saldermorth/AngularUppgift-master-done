@@ -8,9 +8,8 @@ describe('SkidFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkidFormComponent ]
-    })
-    .compileComponents();
+      declarations: [SkidFormComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
