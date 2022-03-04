@@ -1,0 +1,12 @@
+<div class="border">
+  <h2>Skidpaketet</h2>
+  <h4>Bokningsbekräftelse</h4>
+  <p *ngIf="skidoritem">{{ skidoritem.header }}</p>
+  <p>Din Bokning är Genomförd</p>
+  <div class="bokningNR">
+    <p>Bokningsnummer :</p>
+    <p *ngIf="kvitto">{{ kvitto.confirmationNumber }}</p>
+  </div>
+
+  <div></div>
+</div>

@@ -1,0 +1,41 @@
+<div class="border">
+  <h1>Hyr Skidpaket</h1>
+  <h3>Bokningsformulär</h3>
+  <div *ngIf="valtPaket">
+    <h4 class="paketNamn" [innerText]="valtPaket.header"></h4>
+  </div>
+
+  <br />
+  <div>
+    <form
+      (ngSubmit)="onSubmit()"
+      #personForm="ngForm"
+      action="submit"
+      class="col bokaform"
+    >
+      <label for="namn" class="bokaform">Namn</label>
+      <input
+        id="namn"
+        type="text"
+        class="bokaform"
+        [(ngModel)]="namnet"
+        name="name"
+        autofocus
+        required
+      />
+      <div class="row bokaform"></div>
+      <button id="avbryt" class="bokaform btn-primary" (click)="Clicked(false)">
+        Avbryt
+      </button>
+      <button
+        type="submit"
+        id="boka"
+        class="btn btn-primary"
+        [disabled]="!personForm.form.valid"
+        (click)="SkickaKvitto()"
+      >
+        Boka
+      </button>
+    </form>
+  </div>
+</div>

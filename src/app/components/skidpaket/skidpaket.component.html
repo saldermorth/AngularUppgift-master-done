@@ -1,0 +1,34 @@
+<div *ngIf="skidoritem" class="row border">
+  <div class="col-md-4">
+    <img class="imgAbt" [src]="skidoritem.imageUrl" alt="" />
+  </div>
+  <div class="col-md-8">
+    <h5>{{ skidoritem.header }}</h5>
+    <p>
+      {{ skidoritem.description }}
+    </p>
+    <div class="container">
+      <div class="col-sm">
+        <p
+          *ngIf="extrainfo"
+          class="extraDescription"
+          [innerHtml]="skidoritem.extendedDescription"
+        ></p>
+      </div>
+
+      <div class="float-end botton">
+        <div class="col-sm">
+          <a
+            class="visamer"
+            (click)="toggleExtraInfo()"
+            [innerText]="!extrainfo ? 'Visa Mer' : 'Visa Mindre'"
+          ></a>
+
+          <button (click)="Clicked()" class="btn btn-primary pull-right">
+            Välj
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

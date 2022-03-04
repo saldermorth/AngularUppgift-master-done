@@ -1,0 +1,8 @@
+<Div>
+  <app-skidpaket
+    (valtpaket)="IncomingMessage($event)"
+    *ngFor="let ski of skidoritemarray"
+    [skidoritem]="ski"
+  >
+  </app-skidpaket>
+</Div>

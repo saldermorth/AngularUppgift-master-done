@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div *ngIf="visaBokningKlar">
+    <app-bokning-klar [skidoritem]="skidpaket"></app-bokning-klar>
+  </div>
+  <!-- [kvitto]="kvittoKlart" -->
+  <div *ngIf="visaForm">
+    <app-skid-form
+      (avbryt)="hanteraAvbryt($event)"
+      (kvittoInfo)="hanteraKvitto($event)"
+      [valtPaket]="skidpaket"
+    ></app-skid-form>
+  </div>
+
+  <div *ngIf="visaLista">
+    <app-skid-paket-lista
+      (valtpaket)="hanteraVal($event)"
+    ></app-skid-paket-lista>
+  </div>
+</div>
