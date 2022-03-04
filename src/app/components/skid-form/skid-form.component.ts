@@ -28,7 +28,7 @@ export class SkidFormComponent implements OnInit {
   kvittoInfo = new EventEmitter<Bokningscomfirm>();
 
   constructor(
-    private _sharedVatiables: SharedVariables,
+    private _sharedVariables: SharedVariables,
     private bookingservice: BookingNotificationService
   ) {} // http
 
@@ -50,7 +50,7 @@ export class SkidFormComponent implements OnInit {
       .SkickaBokning(booking)
       .subscribe((svar: Bokningscomfirm) => {
         this.result = svar;
-        this._sharedVatiables.setKvitto(svar);
+        this._sharedVariables.setKvitto(svar);
         this.avbryt.emit(true);
         // Emittar här
       }); //får tilbaka
